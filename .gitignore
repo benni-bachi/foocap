@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.private-captures/
+captures/
+dist/
+*.pcap
+*.pcapng
+packets.jsonl
+indicators.jsonl
+summary.json
+summary.json.tmp
+OutputData.json
