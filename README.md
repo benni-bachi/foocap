@@ -6,7 +6,7 @@ Foocap does not intercept connections, modify traffic, decrypt TLS, or block att
 
 ## Windows 11 setup
 
-Use 64-bit Python 3.12 with this release. Python 3.12 and the pinned dependencies were exercised by the offline suite; the configured CI also targets Python 3.13. Live driver compatibility still needs the smoke test below.
+Use 64-bit Python 3.12 or 3.13 with this release. The offline suite passes on both versions in Windows GitHub Actions, with the pinned dependencies. Python 3.12 was also tested locally. Live driver compatibility still needs the smoke test below.
 
 From the project root in PowerShell:
 

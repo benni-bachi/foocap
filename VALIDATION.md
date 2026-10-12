@@ -20,7 +20,11 @@ Local results on 2026-10-11:
 | Windows output ACL | Current user + SYSTEM only on generated test output |
 | Original captures | Preserved byte-for-byte in private quarantine; absent from public data directory |
 
-Configured GitHub CI is not a completed GitHub run and Python 3.13 is not a locally verified environment. ACL tests run under the normal Windows user account because the execution sandbox denies ACL updates; no administrator elevation or packet capture is involved. Scapy can issue route warnings for synthetic packets with implicit default addresses; those packets are only serialized in memory and never sent.
+ACL tests run under the normal Windows user account because the execution sandbox denies ACL updates; no administrator elevation or packet capture is involved. Scapy can issue route warnings for synthetic packets with implicit default addresses; those packets are only serialized in memory and never sent.
+
+## Public GitHub CI
+
+On 2026-10-12, the [Windows GitHub Actions run](https://github.com/benni-bachi/foocap/actions/runs/38286140007) passed on Python 3.12 and 3.13. Both jobs passed dependency installation, lint, all 50 offline regression tests, and the release allowlist check. The first run exposed an ARP fixture relying on local interface defaults; the fixture now supplies explicit synthetic MAC and IP addresses. No capture driver or live traffic is needed for this suite. Python 3.13 is verified in CI, not in the local development environment.
 
 ## Audit fixes
 
