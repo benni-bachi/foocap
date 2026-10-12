@@ -1,0 +1,40 @@
+{
+    "Services": {
+        "80": "HTTP",
+        "8080": "HTTP",
+        "443": "HTTPs",
+        "5353": "MDNS",
+        "1900": "SSDP",
+        "20": "FTPC",
+        "21": "FTPD",
+        "22": "SSH",
+        "23": "Telnet",
+        "25": "SMTP",
+        "53": "DNS",
+        "67": "DHCPS",
+        "68": "DHCPC",
+        "161": "SNMP",
+        "162": "SNMP",
+        "137": "NetBIOS NS",
+        "138": "NetBIOS DS",
+        "139": "NetBIOS SS",
+        "445": "SMB",
+        "123": "NTP",
+        "110": "POP3",
+        "143": "IMAP",
+        "3306": "MySQL",
+        "5985": "Remote Powershell (HTTP)",
+        "5986": "Remote Powershell (HTTPs)",
+        "5060": "SIP",
+        "5061": "SIP",
+        "5222": "XMPP",
+        "500": "IPsec",
+        "1723": "PPTP",
+        "1194": "OpenVPN",
+        "3128": "HTTP Proxy",
+        "1521": "Oracle"
+    },
+    "Range": [
+        {"start": 49152, "end": 65535, "name": "Dynamic/Private"}
+    ]
+}
