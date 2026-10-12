@@ -133,7 +133,7 @@ class PacketTests(unittest.TestCase):
             IP() / UDP() / Raw(b"x" * 1500),
             IPv6() / TCP(flags="FA"),
             IPv6() / UDP(),
-            ARP(),
+            ARP(hwsrc="02:00:00:00:00:01", hwdst="02:00:00:00:00:02", psrc="192.0.2.1", pdst="198.51.100.1"),
             IP() / ICMP(),
             IPv6() / IPv6ExtHdrFragment(offset=1) / Raw(b"abc"),
             IPv6() / IPv6ExtHdrHopByHop() / UDP(),
@@ -146,6 +146,9 @@ class PacketTests(unittest.TestCase):
                 if IPv6 in item:
                     self.assertEqual(row["ip_header_length"], 40)
                     self.assertEqual(row["ip_total_length"], len(item[IPv6]))
+                if ARP in item:
+                    self.assertEqual(row["source"], "192.0.2.1")
+                    self.assertEqual(row["destination"], "198.51.100.1")
         self.assertEqual(assessment.total, len(layers))
 
     def test_outer_ipv6_not_inner_ipv4(self):
